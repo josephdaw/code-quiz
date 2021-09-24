@@ -6,6 +6,9 @@ const startSectionEl = document.querySelector(".start");
 const questionSectionEl = document.querySelector(".question");
 const timerSectionEl = document.querySelector(".timer");
 
+const timerDisplayEl = document.querySelector(".timer-display");
+
+
 
 var timer;
 var timerCount = 60;
@@ -22,12 +25,17 @@ function playGame() {
     // display the timer section
     timerSectionEl.classList.remove("hide");
 
-
+    startTimer();
 }
 
 function startTimer() {
     timer = setInterval(function(){
         timerCount--;
+        timerDisplayEl.textContent = timerCount;
 
+        if (timerCount === 0) {
+            //clear timer once at zero
+            clearInterval(timer);
+        }
     }, 1000);
 }
