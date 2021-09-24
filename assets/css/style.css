@@ -1,1 +1,86 @@
+/* set root variables */
 
+:root {
+    --primary: #333dc7;
+    --secondary: #e4c8b1;
+    --light: aliceblue;
+    --dark: #192231;
+    --accent: #c20000;
+    --bg-main: rgba(74, 114, 243, 0.1);
+}
+
+
+/* element selectors */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* set default text sizing */
+h1 {
+    font-size: 3rem;
+    line-height: 2em;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    padding: 5px
+}
+
+h1, h2 {
+    padding: 20px;
+    text-align: center;
+    clear: both;
+}
+
+p {
+    line-height: 1.3rem;
+    padding: 5px 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* section formatting (header, main, footer) */
+
+header {
+    padding: 5px 0 15px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a, footer a {
+    padding: 0 10px;
+}
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+footer {
+    padding: 10px 0;
+    flex-shrink: 0;
+}
+
+footer p {
+    text-align: center;
+    padding-top: 10px;
+}
