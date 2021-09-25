@@ -97,24 +97,45 @@ function selectAnswer(el) {
     const correct = selectedAnswer.dataset.correct;
     if (correct) {
         console.log("correct answer");
+        selectedAnswer.classList.add('correct');
 
         if (currentQuestionIndex < (questions.length - 1)) {
-            currentQuestionIndex++;
-            reset();
-            showQuestion();
+            // delay function
+            setTimeout(function () {
+                currentQuestionIndex++;
+                reset();
+                showQuestion();
+            }, 200);
+
         } else {
-            console.log("no more questions");
+            console.log("correct, no more questions");
         };
-
-
 
     } else {
         console.log("incorrect");
+        selectedAnswer.classList.add('wrong');
+        timerSectionEl.classList.add('wrong');
+        timerCount = timerCount - 10;
+
+        if (currentQuestionIndex < (questions.length - 1)) {
+
+            // delay function
+            setTimeout(function () {
+                currentQuestionIndex++;
+                reset();
+                showQuestion();
+            }, 500);
+            
+        } else {
+            console.log("incorrect, no more questions");
+        };
+
     }
 
 };
 
 function reset(){
+    timerSectionEl.classList.remove('wrong');
     // if there are answers we want to remove them
     while (answerEl.firstChild){
         // remove the answers

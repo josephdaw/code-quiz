@@ -128,6 +128,13 @@ footer p {
     display: none;
 }
 
+.correct {
+    background-color: var(--correct);
+}
+
+.wrong {
+    background-color: var(--wrong);
+}
 /* id selectors */
 
 #start-btn {
