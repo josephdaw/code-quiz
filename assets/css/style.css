@@ -114,10 +114,11 @@ footer p {
 
 .answers-group {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 10px 0;
-    align-items: center
+    align-items: center;
+    width: 100%;
 }
 
 .hide {
