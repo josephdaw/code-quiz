@@ -15,19 +15,23 @@ var timerCount = 60;
 
 // questions and answers
 const questions = [
-    {question: "What is 2+2",
+    {question: "What is the difference between `==` and `===`?",
         answers: [
-            {text: "4", correct: true},
-            {text: "22", correct: false}
+            {text: "`==` compares values, `===` compares values and types.", correct: true},
+            {text: "There is only a difference when comparing strings.", correct: false},
+            {text: "There is only a difference when comparing numbers.", correct: false},
+            {text: "There is no difference.", correct: false}
         ]
     },
-    {question: "What is 4+4",
+    {question: "What is 'hoisting?",
         answers: [
-            {text: "What happens if this has a lot of information", correct: false},
-            {text: "8", correct: true}
+            {text: "Raising a flag up a pole.", correct: false},
+            {text: "A behaviour in JS where variable and function declarations are moved to the top of a script.", correct: true},
+            {text: "A method for moving items in an array.", correct: false},
+            {text: "A device for lifting or lowering a load.", correct: false}
         ]
     },
-    {question: "Is this the last question",
+    {question: "Is this the last question?",
         answers: [
             {text: "No", correct: false},
             {text: "Yes", correct: true}
@@ -67,10 +71,6 @@ function startTimer() {
     }, 1000);
 };
 
-// select the next question for the user to answer
-// function setNextQuestion() {
-//     showQuestion(questions[currentQuestionIndex]);
-// };
 
 // send the question to the document
 function showQuestion(){
