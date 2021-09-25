@@ -23,7 +23,7 @@ const questions = [
     },
     {question: "What is 4+4",
         answers: [
-            {text: "2", correct: false},
+            {text: "What happens if this has a lot of information", correct: false},
             {text: "8", correct: true}
         ]
     }
@@ -69,4 +69,17 @@ function setNextQuestion() {
 // send the question to the document
 function showQuestion(question){
     questionEl.innerHTML = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerText = answer.text
+        if (answer.correct){
+            button.dataset.correct = answer.correct
+        };
+        button.addEventListener('click', selectAnswer)
+        answerEl.appendChild(button);
+    });
+};
+
+function selectAnswer() {
+
 };
