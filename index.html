@@ -5,11 +5,11 @@
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
     <!-- links to external styles -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-  
+
     <!-- page title -->
     <title>Code Quiz</title>
   </head>
@@ -27,25 +27,38 @@
       <section class="card start">
         <h2>Welcome to the JavaScript Coding Quiz.</h2>
         <p>When you click the "Start" button, you will be shown a selection
-          of random coding questions. You will have 60 seconds to answer as many 
+          of random coding questions. You will have 60 seconds to answer as many
           as you can. Be careful though, as you will loose time for any incorrect answers!
           <strong>Good Luck!</strong>
         </p>
         <button id="start-btn" class="btn">Start</button>
       </section>
 
-      <section class="card question hide" >
-          <h2 id="question"></h2>
-          <div id="answers" class="answers-group"></div>
+      <section class="card question hide">
+        <h2 id="question"></h2>
+        <div id="answers" class="answers-group"></div>
       </section>
 
-      <section class="card timer hide" >
+      <section class="card timer hide">
         <h2>Timer</h2>
         <p class="timer-display"></p>
-    </section>
+      </section>
+
+      <section class="card player hide">
+        <h2>Quiz Complete</h2>
+        <p>Congratulations on finishing the quiz. Please enter you initials below
+          to record your score.
+        </p>
+        <form action="">
+          <label for="initials">Initials</label>
+          <input type="text" id="initials" name="initials">
+          <input type="submit" value="submit">
+        </form>
+
+      </section>
 
     </main>
-    
+
     <!-- footer -->
     <footer>
       <nav>
@@ -59,7 +72,7 @@
 
     <!-- scripts -->
     <script src="assets/js/script.js"></script>
-    
+
   </body>
 
 </html>

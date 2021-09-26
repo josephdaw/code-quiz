@@ -4,6 +4,7 @@ const startButton = document.querySelector("#start-btn");
 const startSectionEl = document.querySelector(".start");
 const questionSectionEl = document.querySelector(".question");
 const timerSectionEl = document.querySelector(".timer");
+const playerSectionEl = document.querySelector(".player");
 
 const timerDisplayEl = document.querySelector(".timer-display");
 
@@ -13,34 +14,37 @@ const answerEl = document.querySelector("#answers");
 var timer, currentQuestionIndex;
 var timerCount = 60;
 
+// addEvent to user clicking on "start-btn"
+startButton.addEventListener("click", playGame);
+
 // questions and answers
 const questions = [
-    {question: "What is the difference between `==` and `===`?",
+    {
+        question: "What is the difference between `==` and `===`?",
         answers: [
-            {text: "`==` compares values, `===` compares values and types.", correct: true},
-            {text: "There is only a difference when comparing strings.", correct: false},
-            {text: "There is only a difference when comparing numbers.", correct: false},
-            {text: "There is no difference.", correct: false}
+            { text: "`==` compares values, `===` compares values and types.", correct: true },
+            { text: "There is only a difference when comparing strings.", correct: false },
+            { text: "There is only a difference when comparing numbers.", correct: false },
+            { text: "There is no difference.", correct: false }
         ]
     },
-    {question: "What is 'hoisting?",
+    {
+        question: "What is 'hoisting?",
         answers: [
-            {text: "Raising a flag up a pole.", correct: false},
-            {text: "A behaviour in JS where variable and function declarations are moved to the top of a script.", correct: true},
-            {text: "A method for moving items in an array.", correct: false},
-            {text: "A device for lifting or lowering a load.", correct: false}
+            { text: "Raising a flag up a pole.", correct: false },
+            { text: "A behaviour in JS where variable and function declarations are moved to the top of a script.", correct: true },
+            { text: "A method for moving items in an array.", correct: false },
+            { text: "A device for lifting or lowering a load.", correct: false }
         ]
     },
-    {question: "Is this the last question?",
+    {
+        question: "Is this the last question?",
         answers: [
-            {text: "No", correct: false},
-            {text: "Yes", correct: true}
+            { text: "No", correct: false },
+            { text: "Yes", correct: true }
         ]
     }
 ];
-
-// addEvent to user clicking on "start-btn"
-startButton.addEventListener("click", playGame);
 
 
 // function that controls the game
@@ -60,7 +64,7 @@ function playGame() {
 }
 
 function startTimer() {
-    timer = setInterval(function(){
+    timer = setInterval(function () {
         timerCount--;
         timerDisplayEl.textContent = timerCount;
 
@@ -73,7 +77,7 @@ function startTimer() {
 
 
 // send the question to the document
-function showQuestion(){
+function showQuestion() {
     // set question to currentIndex of questions array
     const question = questions[currentQuestionIndex];
     // display question in header of question card
@@ -82,7 +86,7 @@ function showQuestion(){
     question.answers.forEach(answer => {
         const button = document.createElement("button");
         button.innerText = answer.text
-        if (answer.correct){
+        if (answer.correct) {
             // set the dataset to "correct" for the correct answer
             button.dataset.correct = answer.correct
         };
@@ -92,15 +96,19 @@ function showQuestion(){
     });
 };
 
+// determine which answer has been selected
 function selectAnswer(el) {
     const selectedAnswer = el.target;
+    // grab the selected answer's data tag
     const correct = selectedAnswer.dataset.correct;
+    // if the answer is the correct one
     if (correct) {
         console.log("correct answer");
+        // add class of correct for styling
         selectedAnswer.classList.add('correct');
-
+        // check if there is more question in the array
         if (currentQuestionIndex < (questions.length - 1)) {
-            // delay function
+            // delay function to allow timer for user to see styling
             setTimeout(function () {
                 currentQuestionIndex++;
                 reset();
@@ -109,38 +117,62 @@ function selectAnswer(el) {
 
         } else {
             console.log("correct, no more questions");
+            // delay function to allow time for user to see styling
+            setTimeout(function () {
+                gameEnd();
+            }, 200);
         };
 
     } else {
         console.log("incorrect");
+        // add class of wrong to answer and timer for styling
         selectedAnswer.classList.add('wrong');
         timerSectionEl.classList.add('wrong');
+        // subtract time from the timer
         timerCount = timerCount - 10;
-
+        // check to see if there are more questions
         if (currentQuestionIndex < (questions.length - 1)) {
 
-            // delay function
+            // delay function to allow time for user to see styling
             setTimeout(function () {
                 currentQuestionIndex++;
                 reset();
                 showQuestion();
+                // slightly longer time for a wrong answer to give the user 
+                // more time to realise it was incorrect.
             }, 500);
-            
+
         } else {
             console.log("incorrect, no more questions");
+            // delay function to allow time for user to see styling
+            setTimeout(function () {
+                gameEnd();
+                // slightly longer time for a wrong answer to give the user 
+                // more time to realise it was incorrect.
+            }, 500);
         };
 
     }
 
 };
 
-function reset(){
+function reset() {
     timerSectionEl.classList.remove('wrong');
     // if there are answers we want to remove them
-    while (answerEl.firstChild){
+    while (answerEl.firstChild) {
         // remove the answers
         answerEl.removeChild
-        // check if there are still answers
-       (answerEl.firstChild)
+            // check if there are still answers
+            (answerEl.firstChild)
     }
+};
+
+function gameEnd() {
+    // display the question section
+    questionSectionEl.classList.add("hide");
+    // display the timer section
+    timerSectionEl.classList.add("hide");
+
+    playerSectionEl.classList.remove("hide");
+
 };
