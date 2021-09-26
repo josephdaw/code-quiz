@@ -7,9 +7,10 @@ const timerSectionEl = document.querySelector(".timer");
 const playerSectionEl = document.querySelector(".player");
 
 const timerDisplayEl = document.querySelector(".timer-display");
-
 const questionEl = document.querySelector("#question");
 const answerEl = document.querySelector("#answers");
+const submitButton = document.querySelector("#submit")
+const playerInitials = document.querySelector("#initials");
 
 var timer, currentQuestionIndex;
 var timerCount = 60;
@@ -71,6 +72,8 @@ function startTimer() {
         if (timerCount === 0) {
             //clear timer once at zero
             clearInterval(timer);
+            // go to the end of the game
+            gameEnd();
         }
     }, 1000);
 };
@@ -168,11 +171,27 @@ function reset() {
 };
 
 function gameEnd() {
-    // display the question section
+    // ensure the timer stops to track the score
+    clearInterval(timer);
+    // hide the question section
     questionSectionEl.classList.add("hide");
-    // display the timer section
+    // hide the timer section
     timerSectionEl.classList.add("hide");
-
+    // display the player initials section
     playerSectionEl.classList.remove("hide");
 
+    // on form submit
+    submitButton.addEventListener("click", function(event){
+        // stop the form from automatically refreshing
+        event.preventDefault();
+
+        // create an object with the user's initials and score
+        let scoreHistory = {
+            initials: playerInitials.value.trim(),
+            score: timerCount
+        };
+
+        // store the score history in local storage
+        localStorage.setItem("scoreHistory", JSON.stringify(scoreHistory));
+    });
 };
