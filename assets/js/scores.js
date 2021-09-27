@@ -4,16 +4,26 @@ const scoreList = document.querySelector("#score-list");
 let scores = [];
 
 function renderScores() {
+    // sort scores by highest first
+    scores.sort((a,b) => b.score - a.score);
 
-    console.log(scores.length)
-    //scoreList.innerHTML = "";
-    for (var i = 0; i < scores.length; i++){
-        console.log("test")
+    var topScores;
+    // only display the top 5 scores
+    if (scores.length < 5){
+        topScores = scores.length
+    } else {
+        topScores = 5;
+    };
+
+
+    for (var i = 0; i < topScores; i++){
+        // set score equal to current index of stored scores
         let score = scores[i];
-
+        // create a list element
         let li = document.createElement("li");
-        li.textContent = score;
-
+        // add player initials and score to list element
+        li.textContent = `Player: ${score.initials} - Score: ${score.score}`;
+        // add the list element to the #score-list section
         scoreList.appendChild(li);
     };
 };

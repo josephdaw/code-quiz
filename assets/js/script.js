@@ -187,8 +187,12 @@ function gameEnd() {
         // stop the form from automatically refreshing
         event.preventDefault();
 
+        // create a string with the user's initials and score and push to scoreHistory array
+        //scoreHistory.push(`Player: ${playerInitials.value.trim()} - Score: ${timerCount}`);
+
         // create an object with the user's initials and score
-        scoreHistory.push(`Player: ${playerInitials.value.trim()} - Score: ${timerCount}`);
+        scoreHistory.push({initials: playerInitials.value.trim(), score: timerCount}); 
+        
 
         // store the score history in local storage
         localStorage.setItem("scoreHistory", JSON.stringify(scoreHistory));
