@@ -31,6 +31,7 @@ This has been my most challenging project so far. There are a number of differen
 ## Credits
 - This user story is part of the [Adelaide University Coding Boot Camp](https://bootcamps.adelaide.edu.au).
 - I used the YouTube video [Build a Quiz App with JavaScript](https://www.youtube.com/watch?v=riDzcEQbX6k) to help me get my head around some of the concepts.
+- I used this [Javascript Interview Questions](https://www.interviewbit.com/javascript-interview-questions/) to assist me write the questions.
 
 ## License
 This project is released under the [MIT License](LICENSE)
