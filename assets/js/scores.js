@@ -4,19 +4,17 @@ const scoreList = document.querySelector("#score-list");
 let scores = [];
 
 function renderScores() {
-    scores.entries()
 
-    // console.log(scores.length)
-    // //scoreList.innerHTML = "";
-    // for (var i = 0; i < scores.length; i++){
-    //     console.log("test")
-    //     let score = scores[i];
-
-    //     let li = document.createElement("li");
-    //     li.textContent = score;
-
-    //     scoreList.appendChild(li);
-    // };
+    for (var i = 0; i < scores.length; i++){
+        // set score equal to current index of stored scores
+        let score = scores[i];
+        // create a list element
+        let li = document.createElement("li");
+        // add player initials and score to list element
+        li.textContent = `Player: ${score.initials} - Score: ${score.score}`;
+        // add the list element to the #score-list section
+        scoreList.appendChild(li);
+    };
 };
 
 function init(){
