@@ -187,13 +187,9 @@ function gameEnd() {
         // stop the form from automatically refreshing
         event.preventDefault();
 
-        // create a string with the user's initials and score and push to scoreHistory array
-        //scoreHistory.push(`Player: ${playerInitials.value.trim()} - Score: ${timerCount}`);
-
         // create an object with the user's initials and score
         scoreHistory.push({initials: playerInitials.value.trim(), score: timerCount}); 
         
-
         // store the score history in local storage
         localStorage.setItem("scoreHistory", JSON.stringify(scoreHistory));
         // display the high scores page
@@ -204,7 +200,9 @@ function gameEnd() {
 var scoreHistory = [];
 
 function init(){
+    // get any stored scores
     var storedScores = JSON.parse(localStorage.getItem("scoreHistory"));
+    // if there are stored scores, pass them to 'scores'
     if (storedScores !== null) {
         scoreHistory = storedScores
     };

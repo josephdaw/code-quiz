@@ -15,7 +15,7 @@ function renderScores() {
         topScores = 5;
     };
 
-
+    
     for (var i = 0; i < topScores; i++){
         // set score equal to current index of stored scores
         let score = scores[i];
@@ -30,15 +30,12 @@ function renderScores() {
 
 function init(){
     // get any stored scores
-    // var storedScoresObj = JSON.parse(localStorage.getItem("scoreHistory"));
-    // console.log(storedScoresObj);
     var storedScores = JSON.parse(localStorage.getItem("scoreHistory"));
-    // var storedScores = Object.entries(storedScoresObj);
     // if there are stored scores, pass them to 'scores'
     if (storedScores !== null) {
         scores = storedScores
     };
-
+    // call function to render to page
     renderScores()
 };
 
