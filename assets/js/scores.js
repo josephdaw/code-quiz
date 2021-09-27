@@ -4,18 +4,22 @@ const scoreList = document.querySelector("#score-list");
 let scores = [];
 
 function renderScores() {
+    scores.forEach(initial => {
+        console.log(scores.initial);
+        
+    });
 
-    console.log(scores.length)
-    //scoreList.innerHTML = "";
-    for (var i = 0; i < scores.length; i++){
-        console.log("test")
-        let score = scores[i];
+    // console.log(scores.length)
+    // //scoreList.innerHTML = "";
+    // for (var i = 0; i < scores.length; i++){
+    //     console.log("test")
+    //     let score = scores[i];
 
-        let li = document.createElement("li");
-        li.textContent = score;
+    //     let li = document.createElement("li");
+    //     li.textContent = score;
 
-        scoreList.appendChild(li);
-    };
+    //     scoreList.appendChild(li);
+    // };
 };
 
 function init(){
