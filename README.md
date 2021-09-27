@@ -9,7 +9,7 @@
 - [License](#license)
 
 ## Description
-In this project a marketing agency requires their existing website to be updated inline with modern accessiblity and Search Engine Optimisation standards.
+This is a project using HTML, CSS, and JavaScript to create a quiz game. The quiz is focused on JavaScript knowlege. You can test your understanding at https://josephdaw.github.io/code-quiz
 
 ## User Story
 
