@@ -54,6 +54,18 @@ a {
     text-decoration: none;
 }
 
+button {
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+li {
+    line-height: 1.5em;
+}
 
 /* section formatting (header, main, footer) */
 
@@ -82,15 +94,6 @@ main {
     margin: auto;
 }
 
-button {
-    padding: 0.5em;
-    border-radius: 5px;
-}
-
-button:hover {
-    cursor: pointer;
-}
-
 footer {
     padding: 10px 0;
     flex-shrink: 0;
@@ -107,7 +110,7 @@ footer p {
     background-color: var(--light);
     padding: 15px;
     border-radius: 10px;
-    max-width: 95%;
+    max-width: 95vw;
     box-shadow: 0 0 10px 1px;
     display: flex;
     align-items: center;
