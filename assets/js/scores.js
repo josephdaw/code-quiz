@@ -4,10 +4,7 @@ const scoreList = document.querySelector("#score-list");
 let scores = [];
 
 function renderScores() {
-    scores.forEach(initial => {
-        console.log(scores.initial);
-        
-    });
+    scores.entries()
 
     // console.log(scores.length)
     // //scoreList.innerHTML = "";

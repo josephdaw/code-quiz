@@ -191,7 +191,7 @@ function gameEnd() {
         //scoreHistory.push(`Player: ${playerInitials.value.trim()} - Score: ${timerCount}`);
 
         // create an object with the user's initials and score
-        scoreHistory.push({initials: playerInitials.value.trim(), score: timerCount}) 
+        scoreHistory.push({initials: playerInitials.value.trim(), score: timerCount}); 
         
 
         // store the score history in local storage
