@@ -15,6 +15,8 @@ const playerInitials = document.querySelector("#initials");
 var timer, currentQuestionIndex;
 var timerCount = 60;
 
+
+
 // addEvent to user clicking on "start-btn"
 startButton.addEventListener("click", playGame);
 
@@ -186,12 +188,22 @@ function gameEnd() {
         event.preventDefault();
 
         // create an object with the user's initials and score
-        let scoreHistory = {
-            initials: playerInitials.value.trim(),
-            score: timerCount
-        };
+        scoreHistory.push(`Player: ${playerInitials.value.trim()} - Score: ${timerCount}`);
 
         // store the score history in local storage
         localStorage.setItem("scoreHistory", JSON.stringify(scoreHistory));
+        // display the high scores page
+        window.location.replace('scores.html')
     });
 };
+
+var scoreHistory = [];
+
+function init(){
+    var storedScores = JSON.parse(localStorage.getItem("scoreHistory"));
+    if (storedScores !== null) {
+        scoreHistory = storedScores
+    };
+};
+
+init();
