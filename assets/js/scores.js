@@ -4,6 +4,7 @@ const scoreList = document.querySelector("#score-list");
 let scores = [];
 
 function renderScores() {
+    scores.sort((a,b) => b.score - a.score);
 
     for (var i = 0; i < scores.length; i++){
         // set score equal to current index of stored scores
