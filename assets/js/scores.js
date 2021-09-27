@@ -4,9 +4,19 @@ const scoreList = document.querySelector("#score-list");
 let scores = [];
 
 function renderScores() {
+    // sort scores by highest first
     scores.sort((a,b) => b.score - a.score);
 
-    for (var i = 0; i < scores.length; i++){
+    var topScores;
+    // only display the top 5 scores
+    if (scores.length < 5){
+        topScores = scores.length
+    } else {
+        topScores = 5;
+    };
+
+
+    for (var i = 0; i < topScores; i++){
         // set score equal to current index of stored scores
         let score = scores[i];
         // create a list element
