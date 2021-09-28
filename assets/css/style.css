@@ -127,6 +127,10 @@ footer p {
     width: 100%;
 }
 
+.btn-container {
+    padding: 10px 0;
+}
+
 .hide {
     display: none;
 }
