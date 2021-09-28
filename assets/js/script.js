@@ -135,7 +135,6 @@ function selectAnswer(el) {
     const correct = selectedAnswer.dataset.correct;
     // if the answer is the correct one
     if (correct) {
-        console.log("correct answer");
         // add class of correct for styling
         selectedAnswer.classList.add('correct');
         // check if there is more question in the array
@@ -148,7 +147,6 @@ function selectAnswer(el) {
             }, 200);
 
         } else {
-            console.log("correct, no more questions");
             // delay function to allow time for user to see styling
             setTimeout(function () {
                 gameEnd();
@@ -156,7 +154,6 @@ function selectAnswer(el) {
         };
 
     } else {
-        console.log("incorrect");
         // add class of wrong to answer and timer for styling
         selectedAnswer.classList.add('wrong');
         timerSectionEl.classList.add('wrong');
@@ -175,7 +172,6 @@ function selectAnswer(el) {
             }, 500);
 
         } else {
-            console.log("incorrect, no more questions");
             // delay function to allow time for user to see styling
             setTimeout(function () {
                 gameEnd();

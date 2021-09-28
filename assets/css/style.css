@@ -1,5 +1,4 @@
 /* set root variables */
-
 :root {
     --primary: #333dc7;
     --secondary: #e4c8b1;
@@ -7,14 +6,11 @@
     --dark: #192231;
     --accent: #c20000;
     --bg-main: hsl(200, 100%, 35%);
-
     --wrong: hsl(0, 100%, 38%);
     --correct: hsl(150, 100%, 34%);
 }
 
-
 /* element selectors */
-
 html, body {
     height: 100%;
 }
@@ -68,7 +64,6 @@ li {
 }
 
 /* section formatting (header, main, footer) */
-
 header {
     padding: 5px 0 15px 0;
 }
@@ -105,7 +100,6 @@ footer p {
 }
 
 /* class selectors */
-
 .card {
     background-color: var(--light);
     padding: 15px;
@@ -151,7 +145,6 @@ footer p {
     background-color: var(--wrong);
 }
 /* id selectors */
-
 #start-btn {
     font-size: 2em;
     font-weight: bold;
