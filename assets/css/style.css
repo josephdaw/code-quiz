@@ -131,6 +131,14 @@ footer p {
     padding: 10px 0;
 }
 
+.player-form{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .hide {
     display: none;
 }
