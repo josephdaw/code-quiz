@@ -41,10 +41,37 @@ const questions = [
         ]
     },
     {
-        question: "Is this the last question?",
+        question: "What is the 'NaN' property in JavaScript?",
         answers: [
-            { text: "No", correct: false },
-            { text: "Yes", correct: true }
+            { text: "'Not-a-Name': indicated that a variable hasn't been properly declared.", correct: false },
+            { text: "'Not-a-Name': indicates a value is not a valid function.", correct: false },
+            { text: "'Not-a-Noun': indicates a value which is not a string.", correct: false },
+            { text: "'Not-a-Number': indicates a value which is not a legal number.", correct: true }
+        ]
+    },
+    {
+        question: "What is the DOM",
+        answers: [
+            { text: "The Don't Objectivify Methods principle.", correct: false },
+            { text: "The master over SUBs.", correct: false },
+            { text: "The Document Object Model.", correct: true },
+            { text: "The head programmer on a project.", correct: false }
+        ]
+    },
+    {
+        question: "Which is NOT an example of a Primative Type in JavaScript?",
+        answers: [
+            { text: "Boolean", correct: false },
+            { text: "Object", correct: true },
+            { text: "String", correct: false },
+            { text: "Number", correct: false }
+        ]
+    },
+    {
+        question: "Can variables declared using 'const' be reassigned?",
+        answers: [
+            { text: "No", correct: true },
+            { text: "Yes", correct: false }
         ]
     }
 ];
