@@ -1,10 +1,18 @@
 // define variables for the elements we will need to target
 const scoreList = document.querySelector("#score-list");
-const clearButton = document.querySelector("#clear-btn")
+const clearButton = document.querySelector("#clear-btn");
+const replayButton = document.querySelector("#replay-btn");
 
 let scores = [];
 
+// call clearScores function on 'Clear History' click
 clearButton.addEventListener('click',clearScores);
+
+// navigate to home page on 'Play Again' click
+replayButton.addEventListener('click',function() {
+    window.location.replace('index.html');
+});
+
 
 function clearScores() {
     // clear the local storage of scoreHistory
