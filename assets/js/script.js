@@ -1,21 +1,21 @@
 // define variables for the elements we will need to target
-const startButton = document.querySelector("#start-btn");
-
+// section elements
 const startSectionEl = document.querySelector(".start");
 const questionSectionEl = document.querySelector(".question");
 const timerSectionEl = document.querySelector(".timer");
 const playerSectionEl = document.querySelector(".player");
-
+// elements for text changes
 const timerDisplayEl = document.querySelector(".timer-display");
 const questionEl = document.querySelector("#question");
 const answerEl = document.querySelector("#answers");
+// buttons
 const submitButton = document.querySelector("#submit")
+const startButton = document.querySelector("#start-btn");
+// input elements
 const playerInitials = document.querySelector("#initials");
-
+// global variables
 var timer, currentQuestionIndex;
 var timerCount = 60;
-
-
 
 // addEvent to user clicking on "start-btn"
 startButton.addEventListener("click", playGame);
@@ -194,8 +194,8 @@ function reset() {
     while (answerEl.firstChild) {
         // remove the answers
         answerEl.removeChild
-            // check if there are still answers
-            (answerEl.firstChild)
+        // check if there are still answers
+        (answerEl.firstChild)
     }
 };
 
@@ -210,13 +210,11 @@ function gameEnd() {
     playerSectionEl.classList.remove("hide");
 
     // on form submit
-    submitButton.addEventListener("click", function(event){
+    submitButton.addEventListener("click", function (event) {
         // stop the form from automatically refreshing
         event.preventDefault();
-
         // create an object with the user's initials and score
-        scoreHistory.push({initials: playerInitials.value.trim(), score: timerCount}); 
-        
+        scoreHistory.push({ initials: playerInitials.value.trim(), score: timerCount });
         // store the score history in local storage
         localStorage.setItem("scoreHistory", JSON.stringify(scoreHistory));
         // display the high scores page
@@ -226,7 +224,7 @@ function gameEnd() {
 
 var scoreHistory = [];
 
-function init(){
+function init() {
     // get any stored scores
     var storedScores = JSON.parse(localStorage.getItem("scoreHistory"));
     // if there are stored scores, pass them to 'scores'
