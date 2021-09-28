@@ -1,7 +1,24 @@
 // define variables for the elements we will need to target
 const scoreList = document.querySelector("#score-list");
+const clearButton = document.querySelector("#clear-btn")
 
 let scores = [];
+
+clearButton.addEventListener('click',clearScores);
+
+function clearScores() {
+    // clear the local storage of scoreHistory
+    localStorage.removeItem("scoreHistory");
+    // make the scores array empty
+    scores = [];
+    // if there are scores already being displayed
+    while (scoreList.firstChild){
+        // remove the scores
+        scoreList.removeChild
+        // check to see it there are more scores
+        (scoreList.firstChild)
+    }
+};
 
 function renderScores() {
     // sort scores by highest first
@@ -15,7 +32,7 @@ function renderScores() {
         topScores = 5;
     };
 
-    
+
     for (var i = 0; i < topScores; i++){
         // set score equal to current index of stored scores
         let score = scores[i];
